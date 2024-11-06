@@ -1,4 +1,5 @@
-var formulario = document.querySelector("#form")
+// Se modifica el selector para que pueda escoger la clase formulario
+var formulario = document.querySelector(".formulario")
 
 formulario.onsubmit = function(e) {
 
@@ -10,6 +11,7 @@ formulario.onsubmit = function(e) {
 
   var nombre = n.value
   var edad = e.value
+  var na = na.value
 
   var i = na.selectedIndex
   var nacionalidad = na.options[i].value
@@ -22,10 +24,8 @@ formulario.onsubmit = function(e) {
   if (edad < 18 || edad > 120) {
     e.classList.add("error")
   }
-
-if (nombre.length > 0 
-  && (edad > 18 
-    && edad < 120) ) {
+//  Se alinea la condicional del if a una sola linea
+if (nombre.length > 0 && (edad > 18 && edad < 120) ) {
   agregarInvitado(nombre, edad, nacionalidad)
   }
 }
